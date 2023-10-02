@@ -1,5 +1,3 @@
-@tool
-
 extends Node2D
 
 @export var res : Building

@@ -1,4 +1,4 @@
-[gd_scene load_steps=59 format=3 uid="uid://bsc8jcn01ofv"]
+[gd_scene load_steps=81 format=3 uid="uid://bsc8jcn01ofv"]
 
 [ext_resource type="Script" path="res://scripts/map/Main_Level.gd" id="1_a1yys"]
 [ext_resource type="Texture2D" uid="uid://b660608n38c5q" path="res://assets/sprites/map/map.png" id="1_gwvt3"]
@@ -16,6 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://e1lkw6towclb" path="res://assets/sprites/map/buildings/building_5.png" id="12_omqam"]
 [ext_resource type="Resource" uid="uid://qv07xpa6lcuw" path="res://resources/buildings/155_hamilton.tres" id="14_bs2og"]
 [ext_resource type="Texture2D" uid="uid://coatwgl0wamjd" path="res://assets/sprites/map/buildings/building_6.png" id="15_4kxue"]
+[ext_resource type="Resource" uid="uid://gf00dqo1n70o" path="res://resources/buildings/state_house.tres" id="17_h1ead"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_k1m5x"]
 size = Vector2(83, 150)
@@ -36,22 +37,19 @@ size = Vector2(202, 114)
 size = Vector2(116, 60)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3kb4k"]
-size = Vector2(153, 97)
+size = Vector2(161, 113)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_31jdf"]
-size = Vector2(72, 65)
+size = Vector2(215, 131)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3vodx"]
-size = Vector2(124, 158)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_j6s76"]
-size = Vector2(45, 49)
+size = Vector2(222, 183)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fwokk"]
 size = Vector2(67, 90)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qufe6"]
-size = Vector2(100, 125)
+size = Vector2(89, 125)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hv753"]
 size = Vector2(44, 105)
@@ -92,20 +90,68 @@ size = Vector2(133, 126)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x1eg4"]
 size = Vector2(83, 169)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uht52"]
+size = Vector2(99.5, 162.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_khwtr"]
+size = Vector2(226.75, 166.25)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k0h1d"]
+size = Vector2(146.375, 66.125)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_oh4bl"]
 size = Vector2(116, 65)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2wodp"]
-size = Vector2(134, 83)
+size = Vector2(215, 137)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v3jto"]
+size = Vector2(258.5, 113.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k0v4b"]
+size = Vector2(345.25, 113.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_npyo7"]
 size = Vector2(150, 138)
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_v1dwe"]
+radius = 14.7139
+height = 51.9932
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_73ick"]
+radius = 21.2921
+height = 51.9932
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qll6r"]
+radius = 18.0109
+height = 42.3875
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_pydsd"]
+radius = 15.0255
+height = 38.012
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ncwiw"]
+radius = 18.0109
+height = 42.3875
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_05icu"]
+radius = 15.0255
+height = 59.8347
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l2a5n"]
-size = Vector2(86, 84)
+size = Vector2(213, 100)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3qn0c"]
+size = Vector2(131.5, 112)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ovlrp"]
+size = Vector2(183.5, 100)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_maa84"]
-size = Vector2(129, 79)
+size = Vector2(154, 79)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0b8uq"]
+size = Vector2(173, 99.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_035wk"]
 size = Vector2(118, 66)
@@ -116,6 +162,14 @@ size = Vector2(132, 94)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_aq1ud"]
 size = Vector2(132, 83)
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_at0cv"]
+radius = 14.9877
+height = 39.9673
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_niai7"]
+radius = 14.9877
+height = 37.5553
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_63i7n"]
 size = Vector2(131, 78)
 
@@ -123,7 +177,7 @@ size = Vector2(131, 78)
 size = Vector2(130, 127)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_exrmo"]
-size = Vector2(129, 129)
+size = Vector2(198, 132)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pe47x"]
 size = Vector2(325, 167)
@@ -143,6 +197,28 @@ size = Vector2(81, 80)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mvkkk"]
 size = Vector2(127, 157)
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rkv7w"]
+radius = 22.0468
+height = 70.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_jona5"]
+radius = 22.0468
+height = 53.8516
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6el6h"]
+radius = 17.0823
+height = 56.4556
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_pk01t"]
+radius = 13.1758
+height = 41.9774
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_sb1ev"]
+radius = 29.1204
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_a5c3q"]
+radius = 23.7698
+
 [node name="Main_Level" type="Node2D"]
 script = ExtResource("1_a1yys")
 
@@ -151,7 +227,8 @@ texture = ExtResource("1_gwvt3")
 centered = false
 
 [node name="Player" parent="." instance=ExtResource("2_8sy8a")]
-position = Vector2(328, 186)
+position = Vector2(237, 91)
+rotation = 1.57079
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 zoom = Vector2(4, 4)
@@ -202,7 +279,8 @@ shape = SubResource("RectangleShape2D_b7vmv")
 texture = ExtResource("7_lowtd")
 
 [node name="Building_3" parent="Buildings" instance=ExtResource("3_6djyu")]
-position = Vector2(481, 1105)
+position = Vector2(461, 1078)
+rotation = -1.57079
 res = ExtResource("8_6l7ge")
 id = 3
 
@@ -210,34 +288,30 @@ id = 3
 shape = SubResource("RectangleShape2D_skcad")
 
 [node name="CollisionShape2D" parent="Buildings/Building_3/Area2D" index="0"]
-position = Vector2(-4.5, 2.5)
+position = Vector2(-8.5, -5.49991)
 shape = SubResource("RectangleShape2D_3kb4k")
 
 [node name="Sprite2D" parent="Buildings/Building_3" index="2"]
 texture = ExtResource("9_lq4rg")
 
 [node name="Building_4" parent="Buildings" instance=ExtResource("3_6djyu")]
-position = Vector2(1174, 677)
+position = Vector2(1179, 672)
 res = ExtResource("6_oc22h")
 id = 4
 
 [node name="CollisionShape2D" parent="Buildings/Building_4" index="0"]
-position = Vector2(0, 25.5)
+position = Vector2(-0.5, -0.5)
 shape = SubResource("RectangleShape2D_31jdf")
 
 [node name="CollisionShape2D" parent="Buildings/Building_4/Area2D" index="0"]
-position = Vector2(0, 3)
+position = Vector2(1, 11.5)
 shape = SubResource("RectangleShape2D_3vodx")
 
 [node name="Sprite2D" parent="Buildings/Building_4" index="2"]
 texture = ExtResource("7_05774")
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Buildings/Building_4"]
-position = Vector2(0.5, -32.5)
-shape = SubResource("RectangleShape2D_j6s76")
-
 [node name="Building_5" parent="Buildings" instance=ExtResource("3_6djyu")]
-position = Vector2(1345, 693)
+position = Vector2(1344, 692)
 res = ExtResource("12_41qsb")
 id = 5
 
@@ -246,7 +320,7 @@ position = Vector2(-0.5, -1)
 shape = SubResource("RectangleShape2D_fwokk")
 
 [node name="CollisionShape2D" parent="Buildings/Building_5/Area2D" index="0"]
-position = Vector2(0, 3.5)
+position = Vector2(5.5, 3.5)
 shape = SubResource("RectangleShape2D_qufe6")
 
 [node name="Sprite2D" parent="Buildings/Building_5" index="2"]
@@ -274,6 +348,7 @@ shape = SubResource("RectangleShape2D_e7qlw")
 
 [node name="State_house" parent="Buildings" instance=ExtResource("3_6djyu")]
 position = Vector2(588, 652)
+res = ExtResource("17_h1ead")
 id = 7
 
 [node name="CollisionShape2D" parent="Buildings/State_house" index="0"]
@@ -319,25 +394,96 @@ shape = SubResource("RectangleShape2D_f4fri")
 position = Vector2(200.5, 968.5)
 shape = SubResource("RectangleShape2D_x1eg4")
 
+[node name="CollisionShape2D42" type="CollisionShape2D" parent="Decorative_Buildings/StaticBody2D"]
+position = Vector2(112, 969)
+shape = SubResource("RectangleShape2D_x1eg4")
+
+[node name="CollisionShape2D43" type="CollisionShape2D" parent="Decorative_Buildings/StaticBody2D"]
+position = Vector2(358.25, 1207.25)
+shape = SubResource("RectangleShape2D_uht52")
+
+[node name="CollisionShape2D44" type="CollisionShape2D" parent="Decorative_Buildings/StaticBody2D"]
+position = Vector2(182.625, 1279.13)
+shape = SubResource("RectangleShape2D_khwtr")
+
+[node name="CollisionShape2D45" type="CollisionShape2D" parent="Decorative_Buildings/StaticBody2D"]
+position = Vector2(142.813, 1158.94)
+shape = SubResource("RectangleShape2D_k0h1d")
+
 [node name="CollisionShape2D10" type="CollisionShape2D" parent="Decorative_Buildings/StaticBody2D"]
 position = Vector2(1566, 621.5)
 shape = SubResource("RectangleShape2D_oh4bl")
 
 [node name="CollisionShape2D11" type="CollisionShape2D" parent="Decorative_Buildings/StaticBody2D"]
-position = Vector2(1232, 412.5)
+position = Vector2(1191.5, 439.5)
 shape = SubResource("RectangleShape2D_2wodp")
+
+[node name="CollisionShape2D33" type="CollisionShape2D" parent="Decorative_Buildings/StaticBody2D"]
+position = Vector2(954.75, 429.25)
+shape = SubResource("RectangleShape2D_v3jto")
+
+[node name="CollisionShape2D34" type="CollisionShape2D" parent="Decorative_Buildings/StaticBody2D"]
+position = Vector2(604.375, 431)
+shape = SubResource("RectangleShape2D_k0v4b")
 
 [node name="CollisionShape2D12" type="CollisionShape2D" parent="Decorative_Buildings/StaticBody2D"]
 position = Vector2(1401, 433)
 shape = SubResource("RectangleShape2D_npyo7")
 
+[node name="CollisionShape2D35" type="CollisionShape2D" parent="Decorative_Buildings/StaticBody2D"]
+position = Vector2(1405, 558)
+rotation = -1.15994
+shape = SubResource("CapsuleShape2D_v1dwe")
+
+[node name="CollisionShape2D36" type="CollisionShape2D" parent="Decorative_Buildings/StaticBody2D"]
+position = Vector2(1502, 559)
+rotation = -1.66956
+shape = SubResource("CapsuleShape2D_v1dwe")
+
+[node name="CollisionShape2D37" type="CollisionShape2D" parent="Decorative_Buildings/StaticBody2D"]
+position = Vector2(1512, 512)
+rotation = -1.66956
+shape = SubResource("CapsuleShape2D_73ick")
+
+[node name="CollisionShape2D38" type="CollisionShape2D" parent="Decorative_Buildings/StaticBody2D"]
+position = Vector2(1509, 444)
+rotation = -1.66956
+shape = SubResource("CapsuleShape2D_qll6r")
+
+[node name="CollisionShape2D41" type="CollisionShape2D" parent="Decorative_Buildings/StaticBody2D"]
+position = Vector2(1581, 402)
+rotation = -1.96281
+shape = SubResource("CapsuleShape2D_pydsd")
+
+[node name="CollisionShape2D39" type="CollisionShape2D" parent="Decorative_Buildings/StaticBody2D"]
+position = Vector2(1592, 492)
+rotation = -1.66956
+shape = SubResource("CapsuleShape2D_ncwiw")
+
+[node name="CollisionShape2D40" type="CollisionShape2D" parent="Decorative_Buildings/StaticBody2D"]
+position = Vector2(1577, 507)
+rotation = -0.604662
+shape = SubResource("CapsuleShape2D_05icu")
+
 [node name="CollisionShape2D13" type="CollisionShape2D" parent="Decorative_Buildings/StaticBody2D"]
-position = Vector2(1256, 260)
+position = Vector2(1194.5, 252)
 shape = SubResource("RectangleShape2D_l2a5n")
 
+[node name="CollisionShape2D49" type="CollisionShape2D" parent="Decorative_Buildings/StaticBody2D"]
+position = Vector2(920, 123)
+shape = SubResource("RectangleShape2D_3qn0c")
+
+[node name="CollisionShape2D32" type="CollisionShape2D" parent="Decorative_Buildings/StaticBody2D"]
+position = Vector2(1417.25, 253)
+shape = SubResource("RectangleShape2D_ovlrp")
+
 [node name="CollisionShape2D14" type="CollisionShape2D" parent="Decorative_Buildings/StaticBody2D"]
-position = Vector2(721.5, 261.5)
+position = Vector2(734, 261.5)
 shape = SubResource("RectangleShape2D_maa84")
+
+[node name="CollisionShape2D31" type="CollisionShape2D" parent="Decorative_Buildings/StaticBody2D"]
+position = Vector2(929.5, 250.75)
+shape = SubResource("RectangleShape2D_0b8uq")
 
 [node name="CollisionShape2D15" type="CollisionShape2D" parent="Decorative_Buildings/StaticBody2D"]
 position = Vector2(493, 268)
@@ -351,6 +497,16 @@ shape = SubResource("RectangleShape2D_dtdri")
 position = Vector2(138, 260.5)
 shape = SubResource("RectangleShape2D_aq1ud")
 
+[node name="CollisionShape2D47" type="CollisionShape2D" parent="Decorative_Buildings/StaticBody2D"]
+position = Vector2(228, 227)
+rotation = -0.967742
+shape = SubResource("CapsuleShape2D_at0cv")
+
+[node name="CollisionShape2D48" type="CollisionShape2D" parent="Decorative_Buildings/StaticBody2D"]
+position = Vector2(230, 285)
+rotation = -2.04434
+shape = SubResource("CapsuleShape2D_niai7")
+
 [node name="CollisionShape2D18" type="CollisionShape2D" parent="Decorative_Buildings/StaticBody2D"]
 position = Vector2(137.5, 111)
 shape = SubResource("RectangleShape2D_63i7n")
@@ -360,7 +516,7 @@ position = Vector2(138, 590.5)
 shape = SubResource("RectangleShape2D_6oemq")
 
 [node name="CollisionShape2D20" type="CollisionShape2D" parent="Decorative_Buildings/StaticBody2D"]
-position = Vector2(633.5, 988.5)
+position = Vector2(615, 987)
 shape = SubResource("RectangleShape2D_exrmo")
 
 [node name="CollisionShape2D21" type="CollisionShape2D" parent="Decorative_Buildings/StaticBody2D"]
@@ -386,6 +542,36 @@ shape = SubResource("RectangleShape2D_yuc8w")
 [node name="CollisionShape2D26" type="CollisionShape2D" parent="Decorative_Buildings/StaticBody2D"]
 position = Vector2(1505.5, 1243.5)
 shape = SubResource("RectangleShape2D_mvkkk")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Decorative_Buildings/StaticBody2D"]
+position = Vector2(1393, 1324)
+rotation = -1.18618
+shape = SubResource("CapsuleShape2D_rkv7w")
+
+[node name="CollisionShape2D46" type="CollisionShape2D" parent="Decorative_Buildings/StaticBody2D"]
+position = Vector2(1397, 1173)
+rotation = -1.18618
+shape = SubResource("CapsuleShape2D_jona5")
+
+[node name="CollisionShape2D27" type="CollisionShape2D" parent="Decorative_Buildings/StaticBody2D"]
+position = Vector2(175, 451)
+rotation = -1.18618
+shape = SubResource("CapsuleShape2D_6el6h")
+
+[node name="CollisionShape2D30" type="CollisionShape2D" parent="Decorative_Buildings/StaticBody2D"]
+position = Vector2(180, 514)
+rotation = -1.56375
+shape = SubResource("CapsuleShape2D_pk01t")
+
+[node name="CollisionShape2D28" type="CollisionShape2D" parent="Decorative_Buildings/StaticBody2D"]
+position = Vector2(105, 461)
+rotation = -1.18618
+shape = SubResource("CircleShape2D_sb1ev")
+
+[node name="CollisionShape2D29" type="CollisionShape2D" parent="Decorative_Buildings/StaticBody2D"]
+position = Vector2(189, 404)
+rotation = -1.18618
+shape = SubResource("CircleShape2D_a5c3q")
 
 [node name="Border" type="StaticBody2D" parent="."]
 position = Vector2(1056, 768)
