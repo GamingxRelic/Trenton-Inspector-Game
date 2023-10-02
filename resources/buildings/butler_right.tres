@@ -1,0 +1,28 @@
+[gd_resource type="Resource" script_class="Building" load_steps=4 format=3 uid="uid://cj46wtnc72cvt"]
+
+[ext_resource type="Script" path="res://resources/buildings/Building_Res.gd" id="1_d8g6q"]
+[ext_resource type="Texture2D" uid="uid://e1lkw6towclb" path="res://assets/sprites/map/buildings/building_5.png" id="1_m0175"]
+[ext_resource type="Texture2D" uid="uid://c471uud7xru4a" path="res://assets/sprites/images/reports/trenton_cut_bar_licenses.png" id="2_px4n2"]
+
+[resource]
+script = ExtResource("1_d8g6q")
+building_name = "Historical Bar"
+building_sprite = ExtResource("1_m0175")
+history = "9/11/2001
+Trenton plans to cut bar licenses
+Buy-back would retire permits
+By ALBERT RABOTEAU
+Staff Writer
+TRENTON - City officials are planning to buy up liquor licenses in the city to reduce what they claim is an excessive number of bars.
+Faced with an increasing number of resident's complaints about bars, they also are looking to encourage bar owners to relocate from residential areas to three entertainment districts - near Waterfront Park, Sovereign Bank Arena and the site of the downtown Marriott hotel-conference center.
+Mayor Douglas H. Palmer yesterday described the new laws his administration has proposed before a crowd of 20 politically active residents at City Hall.
+The city council is scheduled to review the changes tonight.
+The city is 7.5 square miles and has 161 liquor licenses. About 10 are inactive.
+State law limits the number of liquor licenses a municipality may issue but most of Trenton's liquor licenses were created before the state law was adopted.
+\"Many of our communities have struggled to coexist with neighborhood bars,\" Palmer said. \"Based on the size, population and configuration of our city, the number (of liquor licenses) should be about 47. Increasingly, complaints have demonstrated this is not a harmonious union.\"
+Officials are looking to address the problem by increasing the al-
+See LICENSES, A8
+
+*Clip taken from a local Trenton Newspaper about lowering the amount of bar licenses. This was an ongoing issue in the 1940s until modern day (early 2000s). Credit to Albert Raboteau"
+address = "Report from Trenton Newspaper"
+image = ExtResource("2_px4n2")

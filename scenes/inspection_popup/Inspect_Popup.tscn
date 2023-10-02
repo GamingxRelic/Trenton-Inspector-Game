@@ -1,0 +1,146 @@
+[gd_scene load_steps=10 format=3 uid="uid://dqj88j6py6127"]
+
+[ext_resource type="Script" path="res://scripts/Inspect_Popup.gd" id="1_3otgo"]
+[ext_resource type="Texture2D" uid="uid://hedma2qr4qia" path="res://assets/ui/building_report.png" id="2_26578"]
+[ext_resource type="Texture2D" uid="uid://c3bwk0s71e42c" path="res://assets/sprites/images/buildings/hamilton_ave.png" id="2_s5b4w"]
+[ext_resource type="FontFile" uid="uid://c8bbliyiqugba" path="res://assets/fonts/PressStart2P-Regular.ttf" id="3_c85hi"]
+[ext_resource type="FontFile" uid="uid://c0ygh12rr8sho" path="res://assets/fonts/Comfortaa-VariableFont_wght.ttf" id="4_sera3"]
+[ext_resource type="AudioStream" uid="uid://ddslexxcs50ex" path="res://assets/audio/Vehicle_Car_Button_02.wav" id="6_mvhho"]
+
+[sub_resource type="Theme" id="Theme_cqray"]
+default_font = ExtResource("4_sera3")
+default_font_size = 18
+
+[sub_resource type="LabelSettings" id="LabelSettings_ptap0"]
+font = ExtResource("3_c85hi")
+font_size = 48
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_vhfbw"]
+font = ExtResource("3_c85hi")
+font_size = 32
+font_color = Color(0, 0, 0, 1)
+
+[node name="Inspect_Popup" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_3otgo")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 5
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.290196, 0.290196, 0.290196, 0.537255)
+
+[node name="Newspaper" type="TextureRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_26578")
+
+[node name="Panel" type="Panel" parent="CanvasLayer"]
+anchors_preset = -1
+anchor_left = 0.171875
+anchor_top = 0.253086
+anchor_right = 0.453993
+anchor_bottom = 0.816358
+metadata/_edit_use_anchors_ = true
+
+[node name="History_Text" type="RichTextLabel" parent="CanvasLayer/Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0123077
+anchor_top = 0.00821918
+anchor_right = 0.987692
+anchor_bottom = 0.986301
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 4
+theme = SubResource("Theme_cqray")
+bbcode_enabled = true
+text = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
+metadata/_edit_use_anchors_ = true
+
+[node name="Name" type="Label" parent="CanvasLayer"]
+anchors_preset = -1
+anchor_left = 0.222222
+anchor_top = 0.0416667
+anchor_right = 0.774306
+anchor_bottom = 0.162037
+grow_horizontal = 2
+size_flags_horizontal = 4
+text = "Building Name"
+label_settings = SubResource("LabelSettings_ptap0")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Address" type="Label" parent="CanvasLayer"]
+anchors_preset = -1
+anchor_left = 0.230035
+anchor_top = 0.185185
+anchor_right = 0.53559
+anchor_bottom = 0.285494
+offset_left = -116.667
+offset_top = -35.9998
+offset_right = -116.667
+offset_bottom = -35.9998
+text = "123 Mareep Drive"
+label_settings = SubResource("LabelSettings_vhfbw")
+vertical_alignment = 1
+autowrap_mode = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Button" type="Button" parent="CanvasLayer"]
+anchors_preset = -1
+anchor_left = 0.430556
+anchor_top = 0.842593
+anchor_right = 0.585069
+anchor_bottom = 0.95216
+offset_left = -220.0
+offset_top = -1.00024
+offset_right = -220.0
+offset_bottom = -1.00024
+grow_horizontal = 2
+grow_vertical = 0
+text = "Exit"
+metadata/_edit_use_anchors_ = true
+
+[node name="ScrollContainer" type="ScrollContainer" parent="CanvasLayer"]
+anchors_preset = -1
+anchor_left = 0.473958
+anchor_top = 0.149691
+anchor_right = 0.799479
+anchor_bottom = 0.748765
+offset_left = 42.0006
+offset_top = 77.3337
+offset_right = 42.0006
+offset_bottom = 77.3337
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Image" type="TextureRect" parent="CanvasLayer/ScrollContainer"]
+layout_mode = 2
+texture = ExtResource("2_s5b4w")
+stretch_mode = 5
+metadata/_edit_use_anchors_ = true
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_mvhho")
+autoplay = true
+
+[connection signal="pressed" from="CanvasLayer/Button" to="." method="_on_button_pressed"]

@@ -1,0 +1,31 @@
+[gd_resource type="Resource" script_class="Building" load_steps=4 format=3 uid="uid://buehnma8wbchr"]
+
+[ext_resource type="Script" path="res://resources/buildings/Building_Res.gd" id="1_hwvfq"]
+[ext_resource type="Texture2D" uid="uid://bpheh6d37nu8i" path="res://assets/sprites/map/buildings/building_2.png" id="1_xhptx"]
+[ext_resource type="Texture2D" uid="uid://b68j164omau1e" path="res://assets/sprites/images/reports/9_butler_st.png" id="2_6pa3s"]
+
+[resource]
+script = ExtResource("1_hwvfq")
+building_name = "Tavern on 9 Butler Street"
+building_sprite = ExtResource("1_xhptx")
+history = "STATE OF NEW JERSEY DEPARTMENT OF ALCOHOLIC BEVERAGE CONTROL
+S-1475
+CONCLUSIONS AND ORDER
+
+In the Matter of Disciplinary Proceedings against
+ALBERTI'S, INC..
+30-32 East Front Street, 
+Trenton, New Jersey,
+
+
+Holder of Plenary Retail Consumption License C-171 issued by the Board of Commissioners of the City of Trenton.
+
+Abraham S. Lewis, Esq., Attorney for Defendant-licensee. 
+Milton H. Cooper, Esq., Attorney for Department of Alcoholic Beverage Control.
+BY THE COMMISSIONER:
+On December 13, 1943, charges were served upon the defendant-corporation alleging that on December 1, 1943, it, through one of its employees, sold alcoholic beverages to Constance J.---, a minor, aged twenty years, in violation of R.S. 33:1-77 and Rule 1 of State Regulations No. 20.
+A hearing was held on December 23, 1943, at which time the defendant-corporation appeared and entered a plea of not guilty. The Department produced two of its agents who testified as to the sale to the alleged minor. Although a subpoena to appear was served upon Constance J.---, she failed to appear. The Hearer adjourned the hearing until January 6, 1944, to give the Department additional time to produce the alleged minor. On that date the Department stated its investigation disclosed that Constance J. --- had left her place of employment, as well as the place where she resided in this State, prior to the date of the first hearing, and had announced to her landlady, at the time of her leaving, her intention of returning to Buffalo. The Department further states that it mailed a registered letter to her at the Buffalo address, and a return receipt signed by the minor was received. Nevertheless, she still failed to appear for the adjourned hearing. No indication exists that the alleged minor will ever be available to testify and, without her testimony, the age of the alleged minor cannot be established. Nor is there any evidence that the defendant is in any way.
+
+*Real event and exact building was not at 9 Butler Street. Although there was a bar at 9 Butler Street."
+address = "9 Butler Street"
+image = ExtResource("2_6pa3s")

@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Building" load_steps=4 format=3 uid="uid://qv07xpa6lcuw"]
+
+[ext_resource type="Texture2D" uid="uid://coatwgl0wamjd" path="res://assets/sprites/map/buildings/building_6.png" id="1_36k37"]
+[ext_resource type="Script" path="res://resources/buildings/Building_Res.gd" id="1_qr00p"]
+[ext_resource type="Texture2D" uid="uid://3tagst2en8lb" path="res://assets/sprites/images/buildings/155_hamilton.jpg" id="2_c2a2x"]
+
+[resource]
+script = ExtResource("1_qr00p")
+building_name = "Historical Hamilton Ave"
+building_sprite = ExtResource("1_36k37")
+history = "Historical photograph of the building at 155 Hamilton Ave in Trenton. "
+address = "155 Hamilton Ave"
+image = ExtResource("2_c2a2x")

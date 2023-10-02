@@ -1,0 +1,187 @@
+[gd_scene load_steps=17 format=3 uid="uid://4pemqqk7am63"]
+
+[ext_resource type="Script" path="res://scripts/player/Player.gd" id="1_gcoka"]
+[ext_resource type="Texture2D" uid="uid://ddrm2ko6o42w1" path="res://assets/sprites/player/player.png" id="1_vn0o2"]
+[ext_resource type="Texture2D" uid="uid://bxhsgivncegna" path="res://assets/sprites/particles/smoke.png" id="2_1eg2m"]
+[ext_resource type="AudioStream" uid="uid://dw6xop7a0ddhc" path="res://assets/audio/Vehicle_Van_Idle_Exterior_Rear_Loop_01.wav" id="4_fokcf"]
+[ext_resource type="AudioStream" uid="uid://s33heawr5wod" path="res://assets/audio/Vehicle_Van_Drive_Exterior_Loop_01.wav" id="4_ohqy7"]
+[ext_resource type="Texture2D" uid="uid://0e62g7fagyww" path="res://assets/ui/Arrow.png" id="6_2mldn"]
+
+[sub_resource type="Gradient" id="Gradient_0cv4q"]
+offsets = PackedFloat32Array(0, 0.748148, 1)
+colors = PackedColorArray(0.596078, 0.596078, 0.596078, 0.384314, 0.866667, 0.866667, 0.866667, 0.278431, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_5tfct"]
+gradient = SubResource("Gradient_0cv4q")
+
+[sub_resource type="Curve" id="Curve_yoyth"]
+min_value = 0.8
+max_value = 1.5
+_data = [Vector2(0, 0.8), 0.0, 0.0, 0, 0, Vector2(0.843374, 1.15368), 0.0, 0.0, 0, 0, Vector2(1, 1.5), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_06nsb"]
+curve = SubResource("Curve_yoyth")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_ifgw3"]
+lifetime_randomness = 0.12
+emission_shape = 1
+emission_sphere_radius = 1.0
+particle_flag_disable_z = true
+spread = 7.1
+gravity = Vector3(0, 0, 0)
+initial_velocity_min = -12.0
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+linear_accel_min = 44.06
+linear_accel_max = 51.41
+scale_min = 0.8
+scale_max = 2.5
+scale_curve = SubResource("CurveTexture_06nsb")
+color = Color(0.713726, 0.713726, 0.713726, 1)
+color_ramp = SubResource("GradientTexture1D_5tfct")
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_kyae1"]
+radius = 7.0
+
+[sub_resource type="Animation" id="Animation_yywuu"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AudioStreamPlayer2D:stream")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("4_fokcf")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AudioStreamPlayer2D:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_6yajm"]
+resource_name = "driving"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AudioStreamPlayer2D:stream")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("4_ohqy7")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AudioStreamPlayer2D:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_736bm"]
+resource_name = "idle"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AudioStreamPlayer2D:stream")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("4_fokcf")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AudioStreamPlayer2D:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_tsj8v"]
+_data = {
+"RESET": SubResource("Animation_yywuu"),
+"driving": SubResource("Animation_6yajm"),
+"idle": SubResource("Animation_736bm")
+}
+
+[node name="Player" type="CharacterBody2D" groups=["player"]]
+script = ExtResource("1_gcoka")
+
+[node name="Particles" type="Node2D" parent="."]
+
+[node name="Smoke_Particles" type="GPUParticles2D" parent="Particles"]
+position = Vector2(-15, -3)
+amount = 15
+process_material = SubResource("ParticleProcessMaterial_ifgw3")
+texture = ExtResource("2_1eg2m")
+lifetime = 0.8
+speed_scale = 0.8
+randomness = 0.68
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+rotation = 1.5708
+texture = ExtResource("1_vn0o2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_kyae1")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_fokcf")
+volume_db = -9.413
+autoplay = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_tsj8v")
+}
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Node2D" type="Node2D" parent="CanvasLayer"]
+position = Vector2(969, 145)
+
+[node name="Arrow" type="TextureRect" parent="CanvasLayer/Node2D"]
+anchors_preset = -1
+anchor_left = 0.466667
+anchor_right = 0.533333
+anchor_bottom = 0.118519
+offset_left = 110.0
+offset_top = -90.0
+offset_right = 238.0
+offset_bottom = 38.0
+grow_horizontal = 2
+rotation = 1.5708
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("6_2mldn")
+metadata/_edit_use_anchors_ = true
+
+[connection signal="finished" from="AudioStreamPlayer2D" to="." method="_on_audio_stream_player_2d_finished"]

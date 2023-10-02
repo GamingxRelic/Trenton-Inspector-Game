@@ -1,0 +1,62 @@
+[gd_resource type="Resource" script_class="Building" load_steps=4 format=3 uid="uid://tn2morxbx1on"]
+
+[ext_resource type="Texture2D" uid="uid://cubdwr1lwx3if" path="res://assets/sprites/map/buildings/building_1.png" id="1_4o6wl"]
+[ext_resource type="Script" path="res://resources/buildings/Building_Res.gd" id="1_mai0y"]
+[ext_resource type="Texture2D" uid="uid://dnohujccuigfr" path="res://assets/sprites/images/reports/hamilton_wine_co.png" id="2_numl6"]
+
+[resource]
+script = ExtResource("1_mai0y")
+building_name = "Hamilton Wine & Liquor Co., Inc"
+building_sprite = ExtResource("1_4o6wl")
+history = "2/19/45
+Investigators Report
+Transfer: Place to Place
+
+Application of Hamilton Wine & Liquor Co., Inc., for transfer of Plenary Retail Distribution License #D-4 from present premises at 168 Hamilton Avenue to new premises at 166 Hamilton Avenue.
+Applicant - (Old)........Hamilton Wine & Liquor Co., Inc.
+Premises - (New)........166 Hamilton Avenue
+Registered Agent.......Sidney Stark, Esq.
+Address.......................335 Broad Street Bank Building
+Owner..........................Sabino Allegretti
+Address.......................704 Roebling Avenue
+Type.............................Plenary Retail Distribution
+Filed.............................February 13th, 1945 
+Fee...............................$5.00
+
+Personal Records
+Incorporated September 8th, 1938 at Trenton, New Jersey.
+Shares Stock
+1 10%
+Stockholders Adolph
+Adolph Stein - 413 S. Clinton Avenue
+President & Treasurer
+Born December 27th, 1885 - Russia
+Naturalized - August 9th, 1905 in the State of New York, County of Kings. Edward Kaufmann, Clerk. Permanently Registered - April 26th,  1927 Federal Record - None
+Mercer County & Police Record - None
+
+Shares Stock
+8 80%
+Beatrice Bernstein- 1322 Hamilton Avenue
+Secretary
+Born May 27th, 1913 - New York City.
+Permanently Registered - November 7th, 1934
+Federal Record - None
+Mercer County & Police Record - None
+
+1 10%
+Elizabeth Cohen - 1301 Hamilton Avenue
+Born - May 5th, 1907 - Brooklyn, N. Y. 
+Permanently Registered - May 14th, 1931
+Federal Record - None
+Mercer County & Police Record - None
+
+Premises
+Three story brick building, store front, entrance from Hamilton Avenue. Front portion to be used as package store for the sale of alcoholic beverages. Rear room to be used as an office and for storage, entrance from rear yard to side yard to Hamilton Avenue.
+Cellar - Storage and heating apparatus, cement floor. Outside entrance from Hamilton Avenue and inside entrance from storage room.
+The above described premises constitutes licensees lease.
+Recommendation: Transfer Approved.
+Edith H. Moore
+Edith H. Moore 
+A.B.C. Investigator"
+address = "153 Hamilton Ave"
+image = ExtResource("2_numl6")

@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Building" load_steps=4 format=3 uid="uid://dquyy3xtd813w"]
+
+[ext_resource type="Script" path="res://resources/buildings/Building_Res.gd" id="1_3lim4"]
+[ext_resource type="Texture2D" uid="uid://8sqy4l2oh3" path="res://assets/sprites/map/buildings/building_4.png" id="1_gey5i"]
+[ext_resource type="Texture2D" uid="uid://gnucffhfunqi" path="res://assets/sprites/images/reports/54_butler_st.png" id="2_hx5ba"]
+
+[resource]
+script = ExtResource("1_3lim4")
+building_name = "Retail Liquor Dealer"
+building_sprite = ExtResource("1_gey5i")
+history = "In 1933, Andrew Sivo was issued a license to sell alcoholic beverages. In the image, you can see the official historic documentation stating that one Andrew Sivo is permitted to sell alcohol at the address 54-56 Butler Street as of Aug 11, 1933."
+address = "54-56 Butler Street"
+image = ExtResource("2_hx5ba")

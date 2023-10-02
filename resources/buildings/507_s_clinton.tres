@@ -1,0 +1,49 @@
+[gd_resource type="Resource" script_class="Building" load_steps=4 format=3 uid="uid://cce6bqxyvg1hi"]
+
+[ext_resource type="Texture2D" uid="uid://be6r5mnbkkb5c" path="res://assets/sprites/map/buildings/building_3.png" id="1_81smm"]
+[ext_resource type="Script" path="res://resources/buildings/Building_Res.gd" id="2_tcgc4"]
+[ext_resource type="Texture2D" uid="uid://b8oec78ppg1ae" path="res://assets/sprites/images/reports/comminis.png" id="2_yhf3d"]
+
+[resource]
+script = ExtResource("2_tcgc4")
+building_name = "Comminis Tavern"
+building_sprite = ExtResource("1_81smm")
+history = "INVESTIGATORS REPORT
+10/21/48
+Transfer: Person to Person
+
+Application of Veronien J. Brown for transfer of plenary retail consumption license #C-133 from Raymond R. Brelsford and John A. Rogacki, partnership, premises 502 South Warren Street.
+
+Applicant (New)... ..Veronica J. Brown
+Premises (Old).... ..502 South Warren Street
+Residence ..505 South Warren Street
+Owner ..John McGuire
+Address....6702 Tulip Street, Phila., Pa.
+Type.....Plenary Retail Consumption
+Filed.....October 20, 1948
+Fee.......$65.00
+Trade Name.....Ronnie's Cafe
+\"Broad Package Privileges\"...None
+
+Personal Record
+Born - April 14, 1917 - New York City, New York
+Permanently Registered - Not Roistered
+Federal Record - None
+State, County & Police Record - None
+
+Premises
+Three (3) story brick building, barroom equipped, entrance from South Warren Street. Two side entrances from Mill Street. Gentlemen's toilet, rear of barroom, urinal, lavatory and toilet, tile walls and floor.
+One rear service room rear of barroom, exit to small hall-way to Mill Street, small hall-way right rear of barroom, entrance to collar and service room Ladies' rest room, right rear of service room, lavatory and toilet, floor covered with linoleum.
+Kitchen - extreme rear exit to rear yard to ill Street.
+Cellar - storage, tapping and heating apparatus, cement floor.
+
+Second & Third floors, private entrance from Mill Street. Rear room second floor used for storage of alcoholic beverages, remainder of building living quarters.
+Licensed Premises - Consists of entire first floor except kitchen, cellar and rear room second floor.
+Note - Above applicant qualifies under the three year residence clause as per section #54 of ordinance #41 as awarded and supplemented.
+granted 10/20/48 
+/s/ Edith H. Hoore Edith H. Hoore
+/s/ John Butcher John Butcher
+
+*Real event and exact building was not at 9 Butler Street. Although there was a bar at 507 S Clinton."
+address = "507 South Clinton Ave"
+image = ExtResource("2_yhf3d")

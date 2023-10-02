@@ -1,0 +1,65 @@
+[gd_scene load_steps=8 format=3 uid="uid://c06t3yig1mmh2"]
+
+[ext_resource type="Texture2D" uid="uid://do46p0jeq8ljw" path="res://assets/sprites/map/test_road.png" id="1_ura00"]
+[ext_resource type="PackedScene" uid="uid://4pemqqk7am63" path="res://scenes/player/Player.tscn" id="2_i2tvm"]
+[ext_resource type="PackedScene" uid="uid://drnx3yc10ahqh" path="res://scenes/map/Building.tscn" id="3_i7nkr"]
+[ext_resource type="Resource" uid="uid://tn2morxbx1on" path="res://resources/buildings/153_hamilton_ave.tres" id="4_rvnnc"]
+[ext_resource type="Texture2D" uid="uid://cyb0hljei0vcc" path="res://assets/sprites/map/buildings/test_building.png" id="5_3gnou"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wa5h6"]
+size = Vector2(128, 160)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ccuua"]
+size = Vector2(192, 224)
+
+[node name="Test_Level" type="Node2D"]
+
+[node name="Floor" type="Node2D" parent="."]
+
+[node name="TestRoad2" type="Sprite2D" parent="Floor"]
+position = Vector2(0, -299)
+texture = ExtResource("1_ura00")
+
+[node name="TestRoad5" type="Sprite2D" parent="Floor"]
+position = Vector2(258, -299)
+texture = ExtResource("1_ura00")
+
+[node name="TestRoad3" type="Sprite2D" parent="Floor"]
+position = Vector2(112, -473)
+rotation = 1.5708
+texture = ExtResource("1_ura00")
+
+[node name="TestRoad6" type="Sprite2D" parent="Floor"]
+position = Vector2(146, -473)
+rotation = 1.5708
+texture = ExtResource("1_ura00")
+
+[node name="TestRoad4" type="Sprite2D" parent="Floor"]
+position = Vector2(145, -187)
+rotation = 1.5708
+texture = ExtResource("1_ura00")
+
+[node name="Player" parent="." instance=ExtResource("2_i2tvm")]
+position = Vector2(-8, -195)
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Player"]
+remote_path = NodePath("../../Camera2D")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(-8, -195)
+zoom = Vector2(4, 4)
+
+[node name="Building" parent="." instance=ExtResource("3_i7nkr")]
+position = Vector2(128, -329)
+res = ExtResource("4_rvnnc")
+
+[node name="CollisionShape2D" parent="Building" index="0"]
+shape = SubResource("RectangleShape2D_wa5h6")
+
+[node name="CollisionShape2D" parent="Building/Area2D" index="0"]
+shape = SubResource("RectangleShape2D_ccuua")
+
+[node name="Sprite2D" parent="Building" index="2"]
+texture = ExtResource("5_3gnou")
+
+[editable path="Building"]

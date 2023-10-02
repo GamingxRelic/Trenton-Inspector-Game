@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://crl05nshpnkl4"]
+
+[ext_resource type="Script" path="res://scripts/Game.gd" id="1_ylmc6"]
+[ext_resource type="PackedScene" uid="uid://bsc8jcn01ofv" path="res://scenes/map/Main_Level.tscn" id="2_q8l8n"]
+
+[node name="Game" type="Node2D"]
+process_mode = 1
+script = ExtResource("1_ylmc6")
+
+[node name="Main_Level" parent="." instance=ExtResource("2_q8l8n")]

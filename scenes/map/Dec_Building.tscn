@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://d2jm2r5bdbpct"]
+
+[ext_resource type="Script" path="res://scripts/map/Dec_Building.gd" id="1_yj8mu"]
+
+[node name="Dec_Building" type="StaticBody2D"]
+position = Vector2(491, 333)
+script = ExtResource("1_yj8mu")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]

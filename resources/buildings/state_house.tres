@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Building" load_steps=2 format=3 uid="uid://gf00dqo1n70o"]
+
+[ext_resource type="Script" path="res://resources/buildings/Building_Res.gd" id="1_y3ppt"]
+
+[resource]
+script = ExtResource("1_y3ppt")
+building_name = "The State House of New Jersey"
+history = "In 1792, Jonathan Doane constructed the New Jersey State House, one of the state's oldest capitols. The structure cost £250 and covered 3.75 acres. The Senate and General Assembly occupied the first floor, while the governor's and judicial offices occupied the second. On the roof, there was a bell tower and seven bays.
+Many structural and design changes occurred during the 1800s and early 1900s. Following a fire in 1885, a three-story reconstruction with a new rotunda and dome was built. Arnold Moses would eventually rebuild the State House in the Renaissance style."
+address = "Inner Trenton"
