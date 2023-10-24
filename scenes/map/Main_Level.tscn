@@ -1,4 +1,4 @@
-[gd_scene load_steps=81 format=3 uid="uid://bsc8jcn01ofv"]
+[gd_scene load_steps=113 format=3 uid="uid://bsc8jcn01ofv"]
 
 [ext_resource type="Script" path="res://scripts/map/Main_Level.gd" id="1_a1yys"]
 [ext_resource type="Texture2D" uid="uid://b660608n38c5q" path="res://assets/sprites/map/map.png" id="1_gwvt3"]
@@ -17,6 +17,9 @@
 [ext_resource type="Resource" uid="uid://qv07xpa6lcuw" path="res://resources/buildings/155_hamilton.tres" id="14_bs2og"]
 [ext_resource type="Texture2D" uid="uid://coatwgl0wamjd" path="res://assets/sprites/map/buildings/building_6.png" id="15_4kxue"]
 [ext_resource type="Resource" uid="uid://gf00dqo1n70o" path="res://resources/buildings/state_house.tres" id="17_h1ead"]
+[ext_resource type="Texture2D" uid="uid://dugosuom8t3qq" path="res://assets/sprites/map/buildings/statehouse.png" id="18_vqpjm"]
+[ext_resource type="Resource" uid="uid://iwj2l5grnn5x" path="res://resources/buildings/building_7.tres" id="19_j7hw6"]
+[ext_resource type="PackedScene" uid="uid://c58ailks8mog8" path="res://scenes/map/Road_Name.tscn" id="20_13awy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_k1m5x"]
 size = Vector2(83, 150)
@@ -43,13 +46,13 @@ size = Vector2(161, 113)
 size = Vector2(215, 131)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3vodx"]
-size = Vector2(222, 183)
+size = Vector2(218, 183)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fwokk"]
 size = Vector2(67, 90)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qufe6"]
-size = Vector2(89, 125)
+size = Vector2(90.9999, 124)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hv753"]
 size = Vector2(44, 105)
@@ -59,6 +62,15 @@ size = Vector2(88, 149)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e7qlw"]
 size = Vector2(18, 66)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mvkkk"]
+size = Vector2(127, 157)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iqcmh"]
+size = Vector2(291, 203)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yuc8w"]
+size = Vector2(81, 80)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_688vy"]
 size = Vector2(329, 170)
@@ -141,6 +153,28 @@ height = 59.8347
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l2a5n"]
 size = Vector2(213, 100)
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_y4sb7"]
+radius = 15.0333
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_dm0p5"]
+radius = 24.0208
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_vb2ib"]
+radius = 17.8453
+height = 51.5027
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ajvk4"]
+radius = 13.0292
+height = 36.7179
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8xbho"]
+radius = 17.8453
+height = 51.5027
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xkl56"]
+radius = 17.8453
+height = 66.0049
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3qn0c"]
 size = Vector2(131.5, 112)
 
@@ -155,6 +189,9 @@ size = Vector2(173, 99.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_035wk"]
 size = Vector2(118, 66)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iov8p"]
+size = Vector2(103, 82)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dtdri"]
 size = Vector2(132, 94)
@@ -191,15 +228,13 @@ size = Vector2(198, 83)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8nj5b"]
 size = Vector2(131, 81)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_yuc8w"]
-size = Vector2(81, 80)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_mvkkk"]
-size = Vector2(127, 157)
-
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rkv7w"]
 radius = 22.0468
 height = 70.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_y3nt8"]
+radius = 17.1144
+height = 49.8105
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_jona5"]
 radius = 22.0468
@@ -219,6 +254,66 @@ radius = 29.1204
 [sub_resource type="CircleShape2D" id="CircleShape2D_a5c3q"]
 radius = 23.7698
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0pf35"]
+size = Vector2(1569, 73)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c45bt"]
+size = Vector2(1562, 73)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p3wkd"]
+size = Vector2(1562, 73)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_41ke4"]
+size = Vector2(1562, 73)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mcqwv"]
+size = Vector2(1568, 73)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ka7co"]
+size = Vector2(58, 1442)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wxs6r"]
+size = Vector2(58, 1438)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eguhf"]
+size = Vector2(18, 108)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ncu5v"]
+size = Vector2(18, 94.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x6m8n"]
+size = Vector2(18, 270.25)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vieqj"]
+size = Vector2(17, 307.125)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kbwph"]
+size = Vector2(18.5, 228.563)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_77vyq"]
+size = Vector2(36, 270)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fbrba"]
+size = Vector2(68, 108)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j26sx"]
+size = Vector2(68, 92)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xv3w0"]
+size = Vector2(36, 237)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vvl13"]
+size = Vector2(29, 270)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lvf3n"]
+size = Vector2(74.5, 321)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_02dwa"]
+size = Vector2(23, 311)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_my84y"]
+size = Vector2(1562, 25.75)
+
 [node name="Main_Level" type="Node2D"]
 script = ExtResource("1_a1yys")
 
@@ -228,7 +323,6 @@ centered = false
 
 [node name="Player" parent="." instance=ExtResource("2_8sy8a")]
 position = Vector2(237, 91)
-rotation = 1.57079
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 zoom = Vector2(4, 4)
@@ -304,14 +398,15 @@ position = Vector2(-0.5, -0.5)
 shape = SubResource("RectangleShape2D_31jdf")
 
 [node name="CollisionShape2D" parent="Buildings/Building_4/Area2D" index="0"]
-position = Vector2(1, 11.5)
+position = Vector2(-1, 11.5)
 shape = SubResource("RectangleShape2D_3vodx")
 
 [node name="Sprite2D" parent="Buildings/Building_4" index="2"]
 texture = ExtResource("7_05774")
 
 [node name="Building_5" parent="Buildings" instance=ExtResource("3_6djyu")]
-position = Vector2(1344, 692)
+position = Vector2(1364, 705)
+rotation = 1.57079
 res = ExtResource("12_41qsb")
 id = 5
 
@@ -320,7 +415,7 @@ position = Vector2(-0.5, -1)
 shape = SubResource("RectangleShape2D_fwokk")
 
 [node name="CollisionShape2D" parent="Buildings/Building_5/Area2D" index="0"]
-position = Vector2(5.5, 3.5)
+position = Vector2(6.50006, -14)
 shape = SubResource("RectangleShape2D_qufe6")
 
 [node name="Sprite2D" parent="Buildings/Building_5" index="2"]
@@ -346,10 +441,27 @@ texture = ExtResource("15_4kxue")
 position = Vector2(-23, -20)
 shape = SubResource("RectangleShape2D_e7qlw")
 
+[node name="Building_7" parent="Buildings" instance=ExtResource("3_6djyu")]
+position = Vector2(1449, 1317)
+res = ExtResource("19_j7hw6")
+id = 7
+
+[node name="CollisionShape2D" parent="Buildings/Building_7" index="0"]
+position = Vector2(45, 8)
+shape = SubResource("RectangleShape2D_mvkkk")
+
+[node name="CollisionShape2D" parent="Buildings/Building_7/Area2D" index="0"]
+position = Vector2(14.5, 6.5)
+shape = SubResource("RectangleShape2D_iqcmh")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Buildings/Building_7"]
+position = Vector2(-61, 9)
+shape = SubResource("RectangleShape2D_yuc8w")
+
 [node name="State_house" parent="Buildings" instance=ExtResource("3_6djyu")]
 position = Vector2(588, 652)
 res = ExtResource("17_h1ead")
-id = 7
+id = 8
 
 [node name="CollisionShape2D" parent="Buildings/State_house" index="0"]
 shape = SubResource("RectangleShape2D_688vy")
@@ -357,6 +469,9 @@ shape = SubResource("RectangleShape2D_688vy")
 [node name="CollisionShape2D" parent="Buildings/State_house/Area2D" index="0"]
 position = Vector2(4, 0.5)
 shape = SubResource("RectangleShape2D_b43y1")
+
+[node name="Sprite2D" parent="Buildings/State_house" index="2"]
+texture = ExtResource("18_vqpjm")
 
 [node name="Decorative_Buildings" type="Node2D" parent="."]
 
@@ -469,6 +584,34 @@ shape = SubResource("CapsuleShape2D_05icu")
 position = Vector2(1194.5, 252)
 shape = SubResource("RectangleShape2D_l2a5n")
 
+[node name="CollisionShape2D50" type="CollisionShape2D" parent="Decorative_Buildings/StaticBody2D"]
+position = Vector2(1120, 95)
+shape = SubResource("CircleShape2D_y4sb7")
+
+[node name="CollisionShape2D51" type="CollisionShape2D" parent="Decorative_Buildings/StaticBody2D"]
+position = Vector2(1573, 144)
+shape = SubResource("CircleShape2D_dm0p5")
+
+[node name="CollisionShape2D52" type="CollisionShape2D" parent="Decorative_Buildings/StaticBody2D"]
+position = Vector2(1184, 142)
+rotation = 0.533182
+shape = SubResource("CapsuleShape2D_vb2ib")
+
+[node name="CollisionShape2D53" type="CollisionShape2D" parent="Decorative_Buildings/StaticBody2D"]
+position = Vector2(1175, 138)
+rotation = -1.12712
+shape = SubResource("CapsuleShape2D_ajvk4")
+
+[node name="CollisionShape2D55" type="CollisionShape2D" parent="Decorative_Buildings/StaticBody2D"]
+position = Vector2(1279, 136)
+rotation = -1.2496
+shape = SubResource("CapsuleShape2D_8xbho")
+
+[node name="CollisionShape2D56" type="CollisionShape2D" parent="Decorative_Buildings/StaticBody2D"]
+position = Vector2(1443, 127)
+rotation = 0.00253797
+shape = SubResource("CapsuleShape2D_xkl56")
+
 [node name="CollisionShape2D49" type="CollisionShape2D" parent="Decorative_Buildings/StaticBody2D"]
 position = Vector2(920, 123)
 shape = SubResource("RectangleShape2D_3qn0c")
@@ -488,6 +631,10 @@ shape = SubResource("RectangleShape2D_0b8uq")
 [node name="CollisionShape2D15" type="CollisionShape2D" parent="Decorative_Buildings/StaticBody2D"]
 position = Vector2(493, 268)
 shape = SubResource("RectangleShape2D_035wk")
+
+[node name="CollisionShape2D57" type="CollisionShape2D" parent="Decorative_Buildings/StaticBody2D"]
+position = Vector2(603.5, 245)
+shape = SubResource("RectangleShape2D_iov8p")
 
 [node name="CollisionShape2D16" type="CollisionShape2D" parent="Decorative_Buildings/StaticBody2D"]
 position = Vector2(317, 253)
@@ -535,18 +682,15 @@ shape = SubResource("RectangleShape2D_1cb00")
 position = Vector2(1232.5, 1320.5)
 shape = SubResource("RectangleShape2D_8nj5b")
 
-[node name="CollisionShape2D25" type="CollisionShape2D" parent="Decorative_Buildings/StaticBody2D"]
-position = Vector2(1400.5, 1244)
-shape = SubResource("RectangleShape2D_yuc8w")
-
-[node name="CollisionShape2D26" type="CollisionShape2D" parent="Decorative_Buildings/StaticBody2D"]
-position = Vector2(1505.5, 1243.5)
-shape = SubResource("RectangleShape2D_mvkkk")
-
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="Decorative_Buildings/StaticBody2D"]
 position = Vector2(1393, 1324)
 rotation = -1.18618
 shape = SubResource("CapsuleShape2D_rkv7w")
+
+[node name="CollisionShape2D54" type="CollisionShape2D" parent="Decorative_Buildings/StaticBody2D"]
+position = Vector2(1598, 1345)
+rotation = -1.7065
+shape = SubResource("CapsuleShape2D_y3nt8")
 
 [node name="CollisionShape2D46" type="CollisionShape2D" parent="Decorative_Buildings/StaticBody2D"]
 position = Vector2(1397, 1173)
@@ -579,10 +723,133 @@ position = Vector2(1056, 768)
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Border"]
 polygon = PackedVector2Array(-1056, 666, 641, 666, 641, -768, 648, -768, 648, 672, -1064, 672, -1064, -776, 648, -784, 648, -768, -1056, -768)
 
+[node name="Road_Names" type="Node2D" parent="."]
+
+[node name="Hamilton" parent="Road_Names" instance=ExtResource("20_13awy")]
+road_name = "Hamilton Ave"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Road_Names/Hamilton"]
+position = Vector2(847.5, 26.5)
+shape = SubResource("RectangleShape2D_0pf35")
+
+[node name="Bayard" parent="Road_Names" instance=ExtResource("20_13awy")]
+road_name = "Bayard St"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Road_Names/Bayard"]
+position = Vector2(846, 338)
+shape = SubResource("RectangleShape2D_c45bt")
+
+[node name="Butler" parent="Road_Names" instance=ExtResource("20_13awy")]
+road_name = "Butler St"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Road_Names/Butler"]
+position = Vector2(846, 686)
+shape = SubResource("RectangleShape2D_p3wkd")
+
+[node name="Elmer" parent="Road_Names" instance=ExtResource("20_13awy")]
+road_name = "Elmer St"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Road_Names/Elmer"]
+position = Vector2(846, 1088)
+shape = SubResource("RectangleShape2D_41ke4")
+
+[node name="Mott" parent="Road_Names" instance=ExtResource("20_13awy")]
+road_name = "Mott St"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Road_Names/Mott"]
+position = Vector2(848, 1401)
+shape = SubResource("RectangleShape2D_mcqwv")
+
+[node name="Clinton" parent="Road_Names" instance=ExtResource("20_13awy")]
+road_name = "South Clinton Ave"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Road_Names/Clinton"]
+position = Vector2(33, 713)
+shape = SubResource("RectangleShape2D_ka7co")
+
+[node name="Hudson" parent="Road_Names" instance=ExtResource("20_13awy")]
+road_name = "Hudson St"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Road_Names/Hudson"]
+position = Vector2(1663, 716)
+shape = SubResource("RectangleShape2D_wxs6r")
+
+[node name="MSGR_Cardella" parent="Road_Names" instance=ExtResource("20_13awy")]
+position = Vector2(-1174, 7)
+road_name = "MSGR Cardella Ln"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Road_Names/MSGR_Cardella"]
+position = Vector2(1596, 114)
+shape = SubResource("RectangleShape2D_eguhf")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Road_Names/MSGR_Cardella"]
+position = Vector2(1596, 245.25)
+shape = SubResource("RectangleShape2D_ncu5v")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Road_Names/MSGR_Cardella"]
+position = Vector2(1595, 504.875)
+shape = SubResource("RectangleShape2D_x6m8n")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Road_Names/MSGR_Cardella"]
+position = Vector2(1594.5, 877.438)
+shape = SubResource("RectangleShape2D_vieqj")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="Road_Names/MSGR_Cardella"]
+position = Vector2(1596.25, 1237.28)
+shape = SubResource("RectangleShape2D_kbwph")
+
+[node name="Bodine" parent="Road_Names" instance=ExtResource("20_13awy")]
+position = Vector2(-1174, 7)
+road_name = "Bodine Alley"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Road_Names/Bodine"]
+position = Vector2(2483, 505)
+shape = SubResource("RectangleShape2D_77vyq")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Road_Names/Bodine"]
+position = Vector2(2225, 113)
+shape = SubResource("RectangleShape2D_fbrba")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Road_Names/Bodine"]
+position = Vector2(2227, 247)
+shape = SubResource("RectangleShape2D_j26sx")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Road_Names/Bodine"]
+position = Vector2(2487, 1237.5)
+shape = SubResource("RectangleShape2D_xv3w0")
+
+[node name="Whitaker" parent="Road_Names" instance=ExtResource("20_13awy")]
+position = Vector2(-655, 10)
+road_name = "Whitaker Ave"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Road_Names/Whitaker"]
+position = Vector2(1454.5, 499)
+shape = SubResource("RectangleShape2D_vvl13")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Road_Names/Whitaker"]
+position = Vector2(1410.75, 876.5)
+shape = SubResource("RectangleShape2D_lvf3n")
+
+[node name="Peoples" parent="Road_Names" instance=ExtResource("20_13awy")]
+position = Vector2(-655, 10)
+road_name = "Peoples Bakery Ln"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Road_Names/Peoples"]
+position = Vector2(1965.5, 876.5)
+shape = SubResource("RectangleShape2D_02dwa")
+
+[node name="Ditmar" parent="Road_Names" instance=ExtResource("20_13awy")]
+road_name = "Ditmar Alley"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Road_Names/Ditmar"]
+position = Vector2(846, 190)
+shape = SubResource("RectangleShape2D_my84y")
+
 [editable path="Buildings/Building_1"]
 [editable path="Buildings/Building_2"]
 [editable path="Buildings/Building_3"]
 [editable path="Buildings/Building_4"]
 [editable path="Buildings/Building_5"]
 [editable path="Buildings/Building_6"]
+[editable path="Buildings/Building_7"]
 [editable path="Buildings/State_house"]

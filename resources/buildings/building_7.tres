@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Building" load_steps=4 format=3 uid="uid://iwj2l5grnn5x"]
+
+[ext_resource type="Texture2D" uid="uid://tskuc7p1dinc" path="res://assets/sprites/map/buildings/building_8.png" id="1_guvpq"]
+[ext_resource type="Texture2D" uid="uid://csaps3w5dv6d6" path="res://assets/sprites/images/buildings/white_horse_tavern.png" id="2_0mxoi"]
+[ext_resource type="Script" path="res://resources/buildings/Building_Res.gd" id="3_ouxxy"]
+
+[resource]
+script = ExtResource("3_ouxxy")
+building_name = "White Horse Tavern"
+building_sprite = ExtResource("1_guvpq")
+history = "As depicted in the image, the White Horse Tavern was a popular place for social gathering in the 1930s. This specific image is from 1934 during the Great Depression, which massively influenced the United States and its future."
+address = "Historical Trenton"
+image = ExtResource("2_0mxoi")

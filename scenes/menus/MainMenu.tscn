@@ -1,0 +1,151 @@
+[gd_scene load_steps=10 format=3 uid="uid://y7le5tk05q44"]
+
+[ext_resource type="Script" path="res://scripts/MainMenu.gd" id="1_phegg"]
+[ext_resource type="Texture2D" uid="uid://b3bk0qad2ax38" path="res://assets/menus/main_menu.png" id="2_2ma5e"]
+[ext_resource type="FontFile" uid="uid://c8bbliyiqugba" path="res://assets/fonts/PressStart2P-Regular.ttf" id="3_kdlip"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_hf3ks"]
+font = ExtResource("3_kdlip")
+font_size = 48
+font_color = Color(0.54902, 0.670588, 0.631373, 1)
+shadow_size = 12
+shadow_color = Color(0.176471, 0.270588, 0.258824, 1)
+
+[sub_resource type="Animation" id="Animation_6v3qe"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("EnterToStart:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TextureRect:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_t8ml1"]
+resource_name = "enter_fade_in_out"
+length = 0.8
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("EnterToStart:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0.835294), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_eb4k2"]
+resource_name = "screen_fade_out"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("EnterToStart:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.5, 1),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [&"load_level"],
+"method": &"call"
+}, {
+"args": [],
+"method": &"queue_free"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_niqc5"]
+_data = {
+"RESET": SubResource("Animation_6v3qe"),
+"enter_fade_in_out": SubResource("Animation_t8ml1"),
+"screen_fade_out": SubResource("Animation_eb4k2")
+}
+
+[sub_resource type="LabelSettings" id="LabelSettings_ob10b"]
+font_size = 24
+
+[node name="MainMenu" type="CanvasLayer"]
+script = ExtResource("1_phegg")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_2ma5e")
+stretch_mode = 4
+
+[node name="EnterToStart" type="Label" parent="."]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -528.0
+offset_top = -189.0
+offset_right = 528.0
+offset_bottom = -114.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "[Press Enter to Start]"
+label_settings = SubResource("LabelSettings_hf3ks")
+horizontal_alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_niqc5")
+}
+
+[node name="Disclaimer" type="Label" parent="."]
+offset_left = 16.0
+offset_top = 14.0
+offset_right = 1718.0
+offset_bottom = 45.0
+text = "*Disclaimer* While this game is based on real locations, placement of buildings and streets ingame may not be 100% historically accurate."
+label_settings = SubResource("LabelSettings_ob10b")

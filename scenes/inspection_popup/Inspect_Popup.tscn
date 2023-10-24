@@ -5,11 +5,11 @@
 [ext_resource type="Texture2D" uid="uid://c3bwk0s71e42c" path="res://assets/sprites/images/buildings/hamilton_ave.png" id="2_s5b4w"]
 [ext_resource type="FontFile" uid="uid://c8bbliyiqugba" path="res://assets/fonts/PressStart2P-Regular.ttf" id="3_c85hi"]
 [ext_resource type="FontFile" uid="uid://c0ygh12rr8sho" path="res://assets/fonts/Comfortaa-VariableFont_wght.ttf" id="4_sera3"]
-[ext_resource type="AudioStream" uid="uid://ddslexxcs50ex" path="res://assets/audio/Vehicle_Car_Button_02.wav" id="6_mvhho"]
+[ext_resource type="AudioStream" uid="uid://co1ee3log2i4a" path="res://assets/audio/ding.mp3" id="6_2sxwk"]
 
 [sub_resource type="Theme" id="Theme_cqray"]
 default_font = ExtResource("4_sera3")
-default_font_size = 18
+default_font_size = 24
 
 [sub_resource type="LabelSettings" id="LabelSettings_ptap0"]
 font = ExtResource("3_c85hi")
@@ -106,14 +106,10 @@ metadata/_edit_use_anchors_ = true
 
 [node name="Button" type="Button" parent="CanvasLayer"]
 anchors_preset = -1
-anchor_left = 0.430556
+anchor_left = 0.43125
 anchor_top = 0.842593
-anchor_right = 0.585069
+anchor_right = 0.585763
 anchor_bottom = 0.95216
-offset_left = -220.0
-offset_top = -1.00024
-offset_right = -220.0
-offset_bottom = -1.00024
 grow_horizontal = 2
 grow_vertical = 0
 text = "Exit"
@@ -140,7 +136,7 @@ stretch_mode = 5
 metadata/_edit_use_anchors_ = true
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("6_mvhho")
+stream = ExtResource("6_2sxwk")
 autoplay = true
 
 [connection signal="pressed" from="CanvasLayer/Button" to="." method="_on_button_pressed"]

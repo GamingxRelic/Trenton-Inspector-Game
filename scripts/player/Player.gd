@@ -9,39 +9,74 @@ var drag := -0.05
 var break_speed := -20.0
 var max_reverse_speed := 50.0
 
+var movement_speed := 100.0
+var accel := 8.0 
+var decel := 10.0 
+
 var slip_speed := 45
 var traction_fast := 6.0
 var traction_slow := 15.0
 
 var steer_direction : float
 
-@onready var motor_loop = preload("res://assets/Vehicle_Van_Idle_Exterior_Rear_Loop_01.wav").duplicate()
-@onready var car_driving_sound = preload("res://assets/audio/Vehicle_Van_Drive_Exterior_Loop_01.wav").duplicate()
-
 # Credits for the steering goes to KidsCanCode https://kidscancode.org/godot_recipes/4.x/2d/car_steering/
 
-func _ready():
-	GameManager.arrow = $CanvasLayer/Node2D/Arrow
+@onready var arrow = $CanvasLayer/ArrowAnchor/Arrow
+@onready var arrow_anchor = $CanvasLayer/ArrowAnchor
 
-func _physics_process(delta):
-	GameManager.player_pos = position
+@onready var objective_label = $CanvasLayer/ObjectiveLabel
+@onready var obj_rem_label = $CanvasLayer/Objectives_Remaining_Label
+@onready var road_name_label = $CanvasLayer/Road_Name_Label
+@onready var smoke_particles = $Particles/Smoke_Particles
+
+@onready var anim = $AnimationPlayer
+@onready var crash_sound = $Audio/CrashSound
+
+
+var crash_sounds := {
+	1: preload("res://assets/audio/crash_01.wav"),
+	2: preload("res://assets/audio/crash_02.wav"),
+	3: preload("res://assets/audio/crash_03.wav"),
+	4: preload("res://assets/audio/crash_04.wav"),
+	5: preload("res://assets/audio/crash_05.wav")
+}
+
+func _ready() -> void:
+	GameManager.arrow = arrow
+	GameManager.objective_label = objective_label
+	GameManager.objectves_remaining_label = obj_rem_label
+	GameManager.set_ui_road_name.connect(_on_set_ui_road_name)
+	GameManager.player = self
+
+func _physics_process(delta) -> void:
+	GameManager.player_pos = global_position
 	acceleration = Vector2.ZERO
-	get_input()
-	apply_friction(delta)
-	calculate_steering(delta)
+	movement(delta)
+	rotate_player()
 	velocity += acceleration * delta
 	
 	if velocity == Vector2.ZERO:
-		$Particles/Smoke_Particles.emitting = false
+		smoke_particles.emitting = false
 	else:
-		$Particles/Smoke_Particles.emitting = true
+		smoke_particles.emitting = true
 	
 	
-	$CanvasLayer/Node2D.rotation = GameManager.player_pos.angle_to_point(GameManager.arrow_target)
+	arrow_anchor.rotation = GameManager.player_pos.angle_to_point(GameManager.arrow_target)
 	
 	move_and_slide()
 
-func get_input():
+
+func movement(delta) -> void:
+	var input_direction = Input.get_vector("move_left", "move_right", "move_up", "move_down")
+	velocity.x = lerp(velocity.x, input_direction.x*movement_speed, accel*delta) if input_direction.x != 0 else lerp(velocity.x, 0.0, decel*delta)
+	velocity.y = lerp(velocity.y, input_direction.y*movement_speed, accel*delta) if input_direction.y != 0 else lerp(velocity.y, 0.0, decel*delta)
+	
+	if input_direction == Vector2.ZERO:
+		anim.play("idle")
+	else:
+		anim.play("driving")
+
+func get_input() -> void:
 	var turn = Input.get_axis("steer_left", "steer_right")
 	steer_direction = turn * deg_to_rad(steering_angle)
 	if Input.is_action_pressed("accelerate"):
@@ -51,31 +86,24 @@ func get_input():
 	if Input.is_action_pressed("brake"):
 		acceleration = transform.x * break_speed
 
-func calculate_steering(delta):  
-	# 1. Find the wheel positions
-	var rear_wheel = position - transform.x * wheel_base / 2.0
-	var front_wheel = position + transform.x * wheel_base / 2.0
-	# 2. Move the wheels forward
-	rear_wheel += velocity * delta
-	front_wheel += velocity.rotated(steer_direction) * delta
-	# 3. Find the new direction vector
-	var new_heading = rear_wheel.direction_to(front_wheel)
-	var traction = traction_fast if velocity.length() > slip_speed else traction_slow
-	var d = new_heading.dot(velocity.normalized())
-	if d > 0:
-		velocity = lerp(velocity, new_heading * velocity.length(), traction * delta)
-	if d < 0:
-		velocity = -new_heading * min(velocity.length(), max_reverse_speed)
-	rotation = new_heading.angle()
+func rotate_player() -> void:
+	var input_direction = Input.get_vector("move_left", "move_right", "move_up", "move_down")
 
-func apply_friction(delta): 
-	if acceleration == Vector2.ZERO and velocity.length() < 15:
-		velocity = Vector2.ZERO
-	var friction_force = velocity * friction * delta
-	var drag_force = velocity * velocity.length() * drag * delta
-	acceleration += drag_force + friction_force
+	# Choose which direction the player should face
+	
+	if input_direction.x < 0 and input_direction.y == 0: 
+		rotation = lerp_angle(rotation, deg_to_rad(180), 0.3)
+	elif input_direction.x > 0 and input_direction.y == 0: 
+		rotation = lerp_angle(rotation, deg_to_rad(0), 0.3)
+	elif input_direction.y > 0:
+		rotation = lerp_angle(rotation, deg_to_rad(90), 0.3)
+	elif input_direction.y < 0:
+		rotation = lerp_angle(rotation, deg_to_rad(270), 0.3)
 
+func _on_crash_area_body_entered(body) -> void:
+	if !body.is_in_group("player"):
+		crash_sound.stream = crash_sounds[randi_range(1,5)]
+		crash_sound.play()
 
-
-func _on_audio_stream_player_2d_finished():
-	$AudioStreamPlayer2D.play()
+func _on_set_ui_road_name(road_name : String) -> void:
+	road_name_label.text = road_name

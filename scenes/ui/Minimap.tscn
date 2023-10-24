@@ -1,0 +1,93 @@
+[gd_scene load_steps=7 format=3 uid="uid://clkyqokp27edj"]
+
+[ext_resource type="Script" path="res://scripts/Minimap.gd" id="1_w4oei"]
+[ext_resource type="Texture2D" uid="uid://dwiovrpu4135y" path="res://assets/sprites/map/minimap.png" id="2_fn46u"]
+[ext_resource type="Texture2D" uid="uid://ddrm2ko6o42w1" path="res://assets/sprites/player/player.png" id="3_7oknc"]
+[ext_resource type="Texture2D" uid="uid://bt24lgpqhlklp" path="res://assets/ui/star.png" id="4_00ab7"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c62s3"]
+bg_color = Color(0.129412, 0.305882, 0.305882, 1)
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_blend = true
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+expand_margin_left = 2.0
+expand_margin_top = 2.0
+expand_margin_right = 2.0
+expand_margin_bottom = 2.0
+
+[sub_resource type="Theme" id="Theme_min34"]
+Panel/styles/panel = SubResource("StyleBoxFlat_c62s3")
+
+[node name="Minimap" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_w4oei")
+metadata/_edit_use_anchors_ = true
+
+[node name="Panel" type="Panel" parent="."]
+modulate = Color(1, 1, 1, 0.796078)
+layout_mode = 2
+offset_left = 1375.0
+offset_top = 23.0
+offset_right = 1891.0
+offset_bottom = 539.0
+theme = SubResource("Theme_min34")
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.00775194
+anchor_top = 0.00581396
+anchor_right = 1.01527
+anchor_bottom = 1.01512
+grow_horizontal = 0
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="SubViewport" type="SubViewport" parent="Panel/SubViewportContainer"]
+transparent_bg = true
+handle_input_locally = false
+render_target_update_mode = 4
+
+[node name="Camera2D" type="Camera2D" parent="Panel/SubViewportContainer/SubViewport"]
+zoom = Vector2(0.43, 0.43)
+limit_left = 0
+limit_top = 0
+limit_right = 1697
+limit_bottom = 1434
+
+[node name="Map" type="TextureRect" parent="Panel/SubViewportContainer/SubViewport"]
+offset_right = 1697.0
+offset_bottom = 1434.0
+texture = ExtResource("2_fn46u")
+
+[node name="PlayerIcon" type="TextureRect" parent="Panel/SubViewportContainer/SubViewport"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -256.0
+offset_top = -256.0
+offset_right = -229.0
+offset_bottom = -224.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(4, 4)
+pivot_offset = Vector2(13, 16)
+texture = ExtResource("3_7oknc")
+
+[node name="Objective_Marker" type="TextureRect" parent="Panel/SubViewportContainer/SubViewport"]
+offset_right = 100.0
+offset_bottom = 100.0
+texture = ExtResource("4_00ab7")
